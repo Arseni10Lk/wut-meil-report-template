@@ -118,21 +118,27 @@
 	\end{table}
 
 	MATLAB code is typeset with \texttt{matlab-prettifier}, as in Listing~\ref{lst:matlab}:
-	\begin{lstlisting}[style=Matlab-editor, caption={Example MATLAB script}, label={lst:matlab}]
-t = linspace(0, 10, 1000);   % time [s]
-x = exp(-0.5*t) .* sin(2*t); % damped response
-plot(t, x), grid on
+	\begin{lstlisting}[style=Matlab-editor, caption={MATLAB script that produces Figure~\ref{fig:example}}, label={lst:matlab}]
+days = linspace(30, 0, 300);        % days until deadline
+planned = 50*ones(size(days));      % steady work, as planned
+actual = 5 + 95*exp(-days/1.5);     % what really happens
+plot(days, planned, '--', days, actual, 'LineWidth', 1.5)
+set(gca, 'XDir', 'reverse'), grid on, ylim([0 110])
+xlabel('Days until deadline'), ylabel('Productivity [%]')
+title('Productivity during the intermediate project')
+legend('Planned', 'Actual', 'Location', 'northwest')
+text(24, 12, 'procrastination'), text(5, 90, 'panic \rightarrow')
 	\end{lstlisting}
 
 	\section{Results}
 
-	Figure~\ref{fig:example} shows how to include a figure.
+	Figure~\ref{fig:example} shows the output of Listing~\ref{lst:matlab}.
 	Put your images in the \texttt{img} folder.
 
 	\begin{figure}[htbp]
 		\centering
-		\includegraphics[width=0.6\textwidth]{example-image}
-		\caption{Example figure.}
+		\includegraphics[width=0.7\textwidth]{example-plot.png}
+		\caption{Productivity of a typical student before the deadline.}
 		\label{fig:example}
 	\end{figure}
 

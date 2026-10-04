@@ -77,7 +77,7 @@ Near the top of the `.tex` file, below the `Title page` comment, replace the exa
 
 ## 4. Write
 
-- **Figures:** put the image file in the `img` folder and replace `example-image` with its name,
+- **Figures:** put the image file in the `img` folder and replace `example-plot.png` with its name,
   e.g. `\includegraphics[width=0.6\textwidth]{my-plot.png}`.
 - **References:** add entries to `references.bib`. Google Scholar gives them ready-made: click
   **Cite** under a search result, then **BibTeX**, and paste the text into the file. Cite it in the
@@ -103,7 +103,7 @@ On Overleaf this works as is. On your own computer minted needs Python, and TeXs
 | `intermediate-project.tex` | Intermediate project, single author |
 | `report.tex` | Course report, group of authors |
 | `references.bib` | Bibliography (biblatex + biber, IEEE style) |
-| `img/` | Your figures |
+| `img/` | Your figures (contains an example plot) |
 | `src/wut-thesis.cls` | Document class |
 | `src/{en,pl}/header/` | Faculty header used on the title page |
 
