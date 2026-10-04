@@ -6,19 +6,12 @@ Faculty of Power and Aeronautical Engineering (MEiL), Warsaw University of Techn
 It is a modified version of [WUT-Thesis](https://github.com/ArturB/WUT-Thesis) by Artur M. Brodzki
 and Piotr Woźniak, which covers Bachelor's and Master's theses only.
 
-## 1. Download the template
-
-**[Download the latest version (ZIP)](https://github.com/Arseni10Lk/wut-meil-report-template/releases/latest/download/wut-meil-report-template.zip)**
-
-You don't need a GitHub account. Older versions and a list of changes are on the
-[Releases page](https://github.com/Arseni10Lk/wut-meil-report-template/releases).
-
-The ZIP contains two ready-to-use documents:
+The template has two ready-to-use documents:
 
 - `intermediate-project.tex`: intermediate project, one author
 - `report.tex`: course report, written by a group
 
-## 2. Open it
+## 1. Open the template
 
 ### Option A: Overleaf (easiest, nothing to install)
 
@@ -39,12 +32,15 @@ these buttons. Overleaf creates a new project with the template.
    - Ubuntu: run `sudo apt install texlive-full` in a terminal
 2. [TeXstudio](https://www.texstudio.org/)
 
-**Every time:**
+**Start a new document:**
 
-1. Unzip the ZIP file (Windows: right-click it → **Extract All**). Keep the files together: the
-   `src` and `img` folders must stay next to the `.tex` file.
-2. In TeXstudio, open `intermediate-project.tex` or `report.tex` with **File → Open**.
-3. Press **F5** (Build & View). The PDF appears on the right.
+1. **[Download the latest version (ZIP)](https://github.com/Arseni10Lk/wut-meil-report-template/releases/latest/download/wut-meil-report-template.zip)**.
+   You don't need a GitHub account.
+2. Unzip it (Windows: right-click it → **Extract All**). Keep the files together: the `src` and
+   `img` folders must stay next to the `.tex` file.
+3. In TeXstudio, open `intermediate-project.tex` or `report.tex` with **File → Open**.
+4. Press **F5** (Build & View). The PDF appears on the right. Press **F5** again whenever you want
+   to update it.
 
 **If something goes wrong:**
 
@@ -56,11 +52,16 @@ these buttons. Overleaf creates a new project with the template.
 
 ### Option C: command line
 
+Download and unzip the ZIP as in Option B, then run:
+
 ```bash
 latexmk -pdf intermediate-project.tex
 ```
 
-## 3. Fill in the title page
+Older versions and a list of changes are on the
+[Releases page](https://github.com/Arseni10Lk/wut-meil-report-template/releases).
+
+## 2. Fill in the title page
 
 Near the top of the `.tex` file, below the `Title page` comment, replace the example text:
 
@@ -75,7 +76,7 @@ Near the top of the `.tex` file, below the `Title page` comment, replace the exa
 | `\author{...}` | Name and student ID; separate group members with `\\` |
 | `\supervisor{...}` | Supervisor, under "Project supervisor:" / "Opiekun projektu:" |
 
-## 4. Write
+## 3. Write
 
 - **Figures:** put the image file in the `img` folder and replace `example-plot.png` with its name,
   e.g. `\includegraphics[width=0.6\textwidth]{my-plot.png}`.
