@@ -23,16 +23,10 @@ The ZIP contains two ready-to-use documents:
 ### Option A: Overleaf (easiest, nothing to install)
 
 Sign in at [overleaf.com](https://www.overleaf.com) (a free account is enough), then click one of
-these buttons. Overleaf creates a new project with the template; click **Recompile** to see the PDF.
+these buttons. Overleaf creates a new project with the template.
 
 [![Open the intermediate project in Overleaf](https://img.shields.io/badge/Open_in_Overleaf-Intermediate_project-47A141?logo=overleaf&logoColor=white)](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FArseni10Lk%2Fwut-meil-report-template%2Freleases%2Flatest%2Fdownload%2Fwut-meil-report-template.zip&engine=pdflatex&main_document=intermediate-project.tex)
 [![Open the course report in Overleaf](https://img.shields.io/badge/Open_in_Overleaf-Course_report-47A141?logo=overleaf&logoColor=white)](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2FArseni10Lk%2Fwut-meil-report-template%2Freleases%2Flatest%2Fdownload%2Fwut-meil-report-template.zip&engine=pdflatex&main_document=report.tex)
-
-If the buttons don't work, upload the ZIP instead:
-
-1. Click **New Project → Upload Project** and choose the ZIP file. You don't need to unzip it.
-2. Open **Menu** (top left) and set **Main document** to `intermediate-project.tex` or `report.tex`.
-3. Click **Recompile**.
 
 ### Option B: TeXstudio on your computer
 
