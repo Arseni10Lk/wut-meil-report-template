@@ -8,10 +8,10 @@ and Piotr Woźniak, which covers Bachelor's and Master's theses only.
 
 ## 1. Download the template
 
-You don't need a GitHub account.
+**[Download the latest version (ZIP)](https://github.com/Arseni10Lk/wut-meil-report-template/releases/latest/download/wut-meil-report-template.zip)**
 
-1. At the top of this page, click the green **Code** button.
-2. Click **Download ZIP**.
+You don't need a GitHub account. Older versions and a list of changes are on the
+[Releases page](https://github.com/Arseni10Lk/wut-meil-report-template/releases).
 
 The ZIP contains two ready-to-use documents:
 
