@@ -1,0 +1,145 @@
+% !TeX program = pdflatex
+% !BIB program = biber
+%-----------------------------------------------------------------
+%  Course report template (group work)
+%  Warsaw University of Technology, Faculty of Power and
+%  Aeronautical Engineering (MEiL)
+%  --
+%  Based on WUT-Thesis, copyleft by Artur M. Brodzki & Piotr Woźniak
+%  https://github.com/ArturB/WUT-Thesis
+%  Modified by Arseni Lysak, 2026. Licensed under GPL-3.0.
+%-----------------------------------------------------------------
+
+\documentclass[
+    bindingoffset=5mm,  % Binding offset
+    footnoteindent=3mm, % Footnote indent
+    hyphenation=true    % Hyphenation turn on/off
+]{src/wut-thesis}
+
+\graphicspath{{img/}}            % Folder with figures
+\addbibresource{references.bib} % Bibliography file
+
+%-----------------------------------------------------------------
+% Extra packages. The class already loads amsmath, amssymb,
+% graphicx, listings, multirow, url, hyperref and biblatex.
+%-----------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{ellipsis}
+\usepackage[scaled=0.85]{beramono}  % Monospace font for code
+\usepackage{xcolor}
+\usepackage{subcaption}             % Sub-figures
+\usepackage{float}                  % [H] float placement
+\usepackage{booktabs}               % \toprule, \midrule, \bottomrule
+\usepackage{siunitx}                % Units: \SI{10}{\meter\per\second}
+\usepackage{pdflscape}              % Landscape pages
+\usepackage[section]{placeins}      % Keep floats inside their section
+\usepackage[numbered,framed]{matlab-prettifier} % MATLAB listings
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={θ}{{$\theta$}}1       % Allow θ in MATLAB code
+}
+% Style for other code: \begin{lstlisting}[style=code, language=Python]
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstdefinestyle{code}{
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{codegreen},
+	stringstyle=\color{codepurple},
+	numbers=left,
+	numberstyle=\tiny\color{codegray},
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=4
+}
+% Optional: nicer highlighting with minted, needs Python (see README)
+% \usepackage{minted}
+% \setminted{breaklines=true}
+
+\raggedbottom
+\emergencystretch=3em
+\setcounter{tocdepth}{2}
+
+%-----------------------------------------------------------------
+% Title page
+%-----------------------------------------------------------------
+\facultymeil % \facultymeil or \facultyeiti
+\langeng     % \langeng or \langpol
+
+\institute{Aeronautics and Applied Mechanics} % Printed as "Institute of ..."
+\worktype{Project Report}                    % Type of work, large and bold
+\fieldofstudy{Course name}                   % Free-text line under the type of work
+\title{Title of the Report}
+\author{                                     % One line per group member
+	Name Surname 123456 \\
+	Name Surname 123457 \\
+	Name Surname 123458
+}
+\supervisor{Supervisor's name}               % Printed under "Project supervisor:"
+\date{\the\year}
+
+\begin{document}
+	\maketitle
+	\newpage
+
+	\tableofcontents
+	\newpage
+
+	\section{Introduction}
+
+	What is modelled or measured, and why.
+	Cite sources with \verb|\cite|, e.g.~\cite{lamport1994latex, wutthesis}.
+
+	\section{Assumptions}
+
+	\begin{itemize}
+		\item First simplifying assumption.
+		\item Second simplifying assumption.
+	\end{itemize}
+
+	\section{Model description}
+
+	Parameters are easiest to read in a table, see Table~\ref{tab:parameters}.
+
+	\begin{table}[htbp]
+		\centering
+		\caption{Example parameters.}
+		\label{tab:parameters}
+		\begin{tabular}{l c S[table-format=2.2] l}
+			\toprule
+			\textbf{Parameter} & \textbf{Symbol} & {\textbf{Value}} & \textbf{Unit} \\
+			\midrule
+			Length   & $L$ & 18.90 & \si{\meter} \\
+			Wingspan & $b$ & 13.56 & \si{\meter} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	MATLAB code is typeset with \texttt{matlab-prettifier}, as in Listing~\ref{lst:matlab}:
+	\begin{lstlisting}[style=Matlab-editor, caption={Example MATLAB script}, label={lst:matlab}]
+t = linspace(0, 10, 1000);   % time [s]
+x = exp(-0.5*t) .* sin(2*t); % damped response
+plot(t, x), grid on
+	\end{lstlisting}
+
+	\section{Results}
+
+	Figure~\ref{fig:example} shows how to include a figure.
+	Put your images in the \texttt{img} folder.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.6\textwidth]{example-image}
+		\caption{Example figure.}
+		\label{fig:example}
+	\end{figure}
+
+	\section{Conclusions}
+
+	Summary of the results.
+
+	\printbibliography
+
+\end{document}

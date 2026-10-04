@@ -1,0 +1,142 @@
+% !TeX program = pdflatex
+% !BIB program = biber
+%-----------------------------------------------------------------
+%  Intermediate Project template
+%  Warsaw University of Technology, Faculty of Power and
+%  Aeronautical Engineering (MEiL)
+%  --
+%  Based on WUT-Thesis, copyleft by Artur M. Brodzki & Piotr Woźniak
+%  https://github.com/ArturB/WUT-Thesis
+%  Modified by Arseni Lysak, 2026. Licensed under GPL-3.0.
+%-----------------------------------------------------------------
+
+\documentclass[
+    bindingoffset=5mm,  % Binding offset
+    footnoteindent=3mm, % Footnote indent
+    hyphenation=true    % Hyphenation turn on/off
+]{src/wut-thesis}
+
+\graphicspath{{img/}}            % Folder with figures
+\addbibresource{references.bib} % Bibliography file
+
+%-----------------------------------------------------------------
+% Extra packages. The class already loads amsmath, amssymb,
+% graphicx, listings, multirow, url, hyperref and biblatex.
+%-----------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{ellipsis}
+\usepackage[scaled=0.85]{beramono}  % Monospace font for code
+\usepackage{xcolor}
+\usepackage{subcaption}             % Sub-figures
+\usepackage{float}                  % [H] float placement
+\usepackage{booktabs}               % \toprule, \midrule, \bottomrule
+\usepackage{siunitx}                % Units: \SI{10}{\meter\per\second}
+\usepackage{pdflscape}              % Landscape pages
+\usepackage[section]{placeins}      % Keep floats inside their section
+\usepackage[numbered,framed]{matlab-prettifier} % MATLAB listings
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate={θ}{{$\theta$}}1       % Allow θ in MATLAB code
+}
+% Style for other code: \begin{lstlisting}[style=code, language=Python]
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstdefinestyle{code}{
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{codegreen},
+	stringstyle=\color{codepurple},
+	numbers=left,
+	numberstyle=\tiny\color{codegray},
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=4
+}
+% Optional: nicer highlighting with minted, needs Python (see README)
+% \usepackage{minted}
+% \setminted{breaklines=true}
+
+\raggedbottom
+\emergencystretch=3em
+\setcounter{tocdepth}{2}
+
+%-----------------------------------------------------------------
+% Title page
+%-----------------------------------------------------------------
+\facultymeil % \facultymeil or \facultyeiti
+\langeng     % \langeng or \langpol
+
+\institute{Aeronautics and Applied Mechanics} % Printed as "Institute of ..."
+\worktype{Intermediate Project}              % Type of work, large and bold
+\fieldofstudy{Aerospace Engineering}         % Free-text line under the type of work
+\title{Title of the Intermediate Project}
+\author{Name Surname 123456}                 % Name and student ID
+\supervisor{Supervisor's name}               % Printed under "Project supervisor:"
+\date{\the\year}
+
+\begin{document}
+	\maketitle
+	\newpage
+
+	\tableofcontents
+	\newpage
+
+	\section{Introduction}
+
+	Motivation, the problem and the goal of the project.
+	Cite sources with \verb|\cite|, e.g.~\cite{lamport1994latex, wutthesis}.
+
+	\section{Related work}
+
+	Overview of existing methods and their limitations.
+
+	\section{Methodology}
+
+	Equations are numbered and referenced with \verb|\eqref|, e.g.~Equation~\eqref{eq:newton}:
+	\begin{equation} \label{eq:newton}
+		\vec{F} = m \vec{a}
+	\end{equation}
+	Units are typeset with \texttt{siunitx}, e.g.~\SI{9.81}{\meter\per\second\squared}.
+
+	Code is typeset with \texttt{listings}, as in Listing~\ref{lst:example}:
+	\begin{lstlisting}[style=code, language=Python, caption={Example Python listing}, label={lst:example}]
+def acceleration(force, mass):
+    # Newton's second law
+    return force / mass
+	\end{lstlisting}
+
+	\section{Results}
+
+	Figure~\ref{fig:example} and Table~\ref{tab:example} show how to include figures and tables.
+	Put your images in the \texttt{img} folder.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.6\textwidth]{example-image}
+		\caption{Example figure.}
+		\label{fig:example}
+	\end{figure}
+
+	\begin{table}[htbp]
+		\centering
+		\caption{Example table.}
+		\label{tab:example}
+		\begin{tabular}{l S[table-format=2.1] S[table-format=2.2]}
+			\toprule
+			\textbf{Case} & {\textbf{Accuracy (\%)}} & {\textbf{Score}} \\
+			\midrule
+			A & 54.2 & 57.72 \\
+			B & 12.0 & 8.50 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\section{Conclusions}
+
+	Summary of the results and directions for future work.
+
+	\printbibliography
+
+\end{document}
