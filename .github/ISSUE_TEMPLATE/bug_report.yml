@@ -1,0 +1,42 @@
+name: Bug report
+description: Something doesn't compile or looks wrong
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! A few short answers help a lot.
+  - type: dropdown
+    id: document
+    attributes:
+      label: Which document?
+      options:
+        - intermediate-project.tex
+        - report.tex
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: editor
+    attributes:
+      label: Where do you compile it?
+      options:
+        - Overleaf
+        - TeXstudio
+        - Other (please say which below)
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message or screenshot
+      description: >
+        Paste the error text or drag a screenshot here. In Overleaf it's under the
+        "Logs and output files" icon next to Recompile. In TeXstudio the log panel at the
+        bottom opens automatically when compiling fails.

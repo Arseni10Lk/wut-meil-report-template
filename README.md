@@ -9,7 +9,7 @@ and Piotr Woźniak, which covers Bachelor's and Master's theses only.
 The template has two ready-to-use documents:
 
 - `intermediate-project.tex`: intermediate project, one author
-- `report.tex`: course report, written by a group
+- `report.tex`: course report, by one student or a group
 
 ## 1. Open the template
 
@@ -97,15 +97,26 @@ instead:
 On Overleaf this works as is. On your own computer minted needs Python, and TeXstudio may need
 `-shell-escape` added to the PdfLaTeX command (**Options → Configure TeXstudio → Commands**).
 
+## Found a problem or have an idea?
+
+Please [open an issue](https://github.com/Arseni10Lk/wut-meil-report-template/issues/new/choose)
+(you need a free GitHub account) and choose:
+
+- **Bug report** if something doesn't compile or looks wrong. A short form asks which document you
+  use, where you compile it, and what went wrong. Paste the error message or attach a screenshot:
+  in Overleaf it's under the **Logs and output files** icon next to **Recompile**; in TeXstudio
+  the log panel at the bottom opens automatically when compiling fails.
+- **Idea or question** for anything else.
+
 ## Files
 
 | File | Purpose |
 |---|---|
 | `intermediate-project.tex` | Intermediate project, single author |
-| `report.tex` | Course report, group of authors |
+| `report.tex` | Course report, one student or a group |
 | `references.bib` | Bibliography (biblatex + biber, IEEE style) |
 | `img/` | Your figures (contains an example plot) |
-| `src/wut-thesis.cls` | Document class |
+| `src/wut-thesis.cls` | Document class, like a general template |
 | `src/{en,pl}/header/` | Faculty header used on the title page |
 
 ## Changes from WUT-Thesis
